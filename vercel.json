@@ -1,18 +1,8 @@
 {
-  "builds": [
-    {
-      "src": "api/main.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/main.py": {
+      "maxDuration": 10,
+      "memory": 1024
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/image.png",
-      "destination": "api/main.py"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "api/main.py"
-    }
-  ]
+  }
 }
